@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 8%;
+    --foreground: 40 30% 90%;
+
+    --card: 220 28% 12%;
+    --card-foreground: 40 30% 90%;
+
+    --popover: 220 28% 12%;
+    --popover-foreground: 40 30% 90%;
+
+    --primary: 40 55% 65%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 25% 16%;
+    --secondary-foreground: 40 30% 85%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 55%;
+
+    --accent: 40 55% 65%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 40 55% 65%;
+
+    --radius: 0.25rem;
+
+    --gold: 40 55% 65%;
+    --gold-light: 40 45% 78%;
+    --gold-dark: 40 60% 45%;
+    --navy: 220 30% 8%;
+    --navy-light: 220 25% 16%;
+    --navy-mid: 220 22% 22%;
+    --cream: 40 30% 90%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --gradient-gold: linear-gradient(135deg, hsl(40 55% 65%), hsl(40 45% 78%));
+    --gradient-navy: linear-gradient(180deg, hsl(220 30% 8%), hsl(220 28% 12%));
+    --shadow-gold: 0 0 40px hsl(40 55% 65% / 0.15);
+    --shadow-elegant: 0 20px 60px hsl(220 30% 4% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .text-gold-light {
+    color: hsl(var(--gold-light));
+  }
+  .text-cream {
+    color: hsl(var(--cream));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+  .bg-navy-mid {
+    background-color: hsl(var(--navy-mid));
+  }
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  .border-gold\/20 {
+    border-color: hsl(var(--gold) / 0.2);
+  }
+  .gradient-gold-text {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-line {
+    @apply h-px w-16 mx-auto;
+    background: var(--gradient-gold);
+  }
+  .gold-line-left {
+    @apply h-px w-16;
+    background: var(--gradient-gold);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--navy));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--gold) / 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--gold) / 0.5);
+}
